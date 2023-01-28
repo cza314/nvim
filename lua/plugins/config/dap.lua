@@ -120,11 +120,11 @@ function M.hydra()
     mode = 'n',
     body = '<leader>d',
     heads = {
-      {'c', '<CMD>:DapContinue<CR>',          {desc = 'Continue'}},           -- 执行到下一断点
-      {'b', '<CMD>:DapToggleBreakpoint<CR>',  {desc = 'Breakpoint'}},         -- 断点
-      {'s', '<CMD>:DapStepOver<CR>',          {desc = 'StepOver'}},           -- 单步跳过执行
-      {'n', '<CMD>:DapStepInto<CR>',          {desc = 'StepInto'}},           -- 单步执行
-      {'o', '<CMD>:DapStepOut<CR>',           {desc = 'StepOut'}},            -- 跳出当前函数
+      {'c', '<CMD>:DapContinue<CR>',          {desc = 'Continue'}},
+      {'b', '<CMD>:DapToggleBreakpoint<CR>',  {desc = 'Breakpoint'}},
+      {'s', '<CMD>:DapStepOver<CR>',          {desc = 'StepOver'}},
+      {'n', '<CMD>:DapStepInto<CR>',          {desc = 'StepInto'}},
+      {'o', '<CMD>:DapStepOut<CR>',           {desc = 'StepOut'}},
       { '<Esc>', nil,                         {exit = true}},
     },
   })

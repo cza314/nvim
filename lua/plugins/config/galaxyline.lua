@@ -124,7 +124,8 @@ insert_left{
   },
 }
 
--- left
+-------- left --------
+
 insert_blank_line_at_left()
 insert_blank_line_at_left()
 
@@ -188,7 +189,8 @@ insert_left {
   }
 }
 
--- right
+-------- right --------
+
 insert_right {
   DiagnosticError = {
     provider = 'DiagnosticError',
