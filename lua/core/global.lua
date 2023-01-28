@@ -10,7 +10,6 @@ local is_windows = os_name == 'Windows'
 
 function global:load_variables()
 
-  -- 判断系统
   self.is_mac     = is_mac
   self.is_linux   = is_linux
   self.is_windows = is_windows
@@ -20,7 +19,6 @@ function global:load_variables()
   self.lsp_path      = data .. 'lsp_servers/'
   self.friendly_snippets = data .. 'lazy/friendly-snippets' -- friendly-snippets
 
-  -- lsp 参数
   self.lsp   = {
     python   = 'jedi-language-server',
     clangd   = data .. 'mason/bin/clangd',
