@@ -1,6 +1,6 @@
 # <Center>My Neovim Config</Center>
 
-__Notes__ : This config only test on macos
+__Notes__ : It's only tested on macos
 
 ## Requirements
 
