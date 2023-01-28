@@ -23,7 +23,6 @@ local map = {
   {'n',  '<Space>tp',   '<CMD>:tabp<CR>'},
   -- window
   {'n',  '<Space>w',    '<C-w>'},
-  {'n',  '<Space>we',   '<CMD>:Ex<CR>'},
   {'i',  '<C-g>','<Esc>'},
   -- move
   {'i',  '<C-a>' ,'<Esc>0i'},
