@@ -21,14 +21,9 @@ end
 
 function M.mapping()
   local set_map = require('core.utils').set_map
-
-  local map = {
+  set_map({
     {'n', '<leader>b', '<CMD>NvimTreeToggle<CR>'},
-  }
-
-  for _, m in ipairs(map) do
-    set_map(m[1], m[2], m[3], {silent = true})
-  end
+  })
 
   require("which-key").register({
     ['<leader>b'] = { name = "browser"},

@@ -83,18 +83,14 @@ end
 
 function M.mapping()
   local set_map = require('core.utils').set_map
-  local map = {
+  set_map({
     {'n',  '<F5>', '<CMD>:DapContinue<CR>'},
     {'n',  '<F3>', '<CMD>:DapToggleRepl<CR>'},
     {'n',  '<F9>', '<CMD>:DapToggleBreakpoint<CR>'},
     {'n',  '<F10>', '<CMD>:DapStepOver<CR>'},
     {'n',  '<F11>', '<CMD>:DapStepInto<CR>'},
     {'n',  '<F12>', '<CMD>:DapStepOut<CR>'},
-  }
-
-  for _,m in ipairs(map) do
-    set_map(m[1], m[2], m[3], {noremap = true})
-  end
+  })
 
   require("which-key").register({
     ["<leader>d"]  = { name = "Debug+"},

@@ -109,8 +109,7 @@ end
 
 function M.mapping()
   local set_map = require('core.utils').set_map
-
-  local map = {
+  set_map({
     {'n', 'K',  '<CMD>Lspsaga hover_doc<CR>'},
     {'n', 'gr', '<CMD>Lspsaga rename<CR>'},
     {'n', 'gd', '<CMD>Lspsaga peek_definition<CR>'},
@@ -131,11 +130,7 @@ function M.mapping()
     {'n',   '<leader>lf', '<CMD>Lspsaga lsp_finder<CR>'},
     {'n',   '<leader>la', '<CMD>Lspsaga code_action<CR>'},
     {"nvti", '<C-\\>',    '<CMD>Lspsaga term_toggle<CR>'},
-  }
-
-  for _, m in ipairs(map) do
-    set_map(m[1], m[2], m[3], {silent = true})
-  end
+  })
 
   require("which-key").register({
     ["<leader>l"]  = { name = "Lsp+"},

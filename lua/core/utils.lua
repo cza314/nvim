@@ -3,10 +3,15 @@ local global = require('core.global')
 local M = {}
 
 -- set map
-function M.set_map(mode, keymap, rhs, options)
-  for i = 1,#mode do
-    local m = string.sub(mode,i,i)
-    vim.keymap.set(m, keymap, rhs, options)
+function M.set_map(map)
+  for _,m in ipairs(map) do
+    for i = 1,#m[1] do
+      local mode = string.sub(m[1],i,i)
+      if m[4] == nil then
+        m[4] = {noremap = true}
+      end
+      vim.keymap.set(mode, m[2], m[3], m[4])
+    end
   end
 end
 
