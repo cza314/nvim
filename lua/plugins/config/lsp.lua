@@ -91,6 +91,8 @@ function M.lspsaga()
     code_action_lightbulb = {
         enable = false,
         enable_in_insert = false,
+        sign = false,
+        virtual_text = false,
     },
     symbol_in_winbar = {
         in_custom = true,
