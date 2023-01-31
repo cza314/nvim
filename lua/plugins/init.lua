@@ -208,12 +208,7 @@ return {
     event = 'BufRead',
     config = function()
       local M = require('plugins.config.lsp')
-      M.clangd()
-      M.lua()
-      M.markdown()
-      M.bash()
-      M.python()
-      M.rust()
+      M.lsp()
       M.lspsaga()
       M.fidget()
       M.mapping()

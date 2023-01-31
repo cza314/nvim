@@ -154,4 +154,13 @@ function M.menu()
   set_menu('n', 'LSoutline',          '<CMD>Lspsaga outline<CR>')
 end
 
+function M.lsp()
+  M.clangd()
+  M.lua()
+  M.markdown()
+  M.bash()
+  M.python()
+  M.rust()
+end
+
 return M
