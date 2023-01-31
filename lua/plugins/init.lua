@@ -1,5 +1,6 @@
 local global = require('core.global')
 local installed = global.treesitter
+local is_mac = global.is_mac
 
 return {
   'folke/lazy.nvim',
@@ -24,6 +25,14 @@ return {
 
   'nathom/filetype.nvim',
   'lewis6991/impatient.nvim',
+
+  -- Automatic switching of input methods for macos
+  {'ybian/smartim',
+    module = is_mac,
+    config = function ()
+      require('plugins.config.smartim')
+    end,
+  },
 
   {'lukas-reineke/indent-blankline.nvim',
     config = function ()
