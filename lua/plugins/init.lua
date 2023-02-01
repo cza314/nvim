@@ -34,6 +34,7 @@ return {
     end,
   },
 
+  -- blankline
   {'lukas-reineke/indent-blankline.nvim',
     config = function ()
       require('plugins.config.indent')
@@ -73,6 +74,18 @@ return {
     config = function()
       require('plugins.config.neogit')
     end,
+  },
+
+  -- a task system
+  {'skywind3000/asynctasks.vim',
+    dependencies = {
+      'skywind3000/asyncrun.vim',
+    },
+    cmd = {'AsyncTaskEdit', 'AsyncTask'},
+    config = function()
+      require('plugins.config.asynctasks')
+    end,
+
   },
 
   -- file browser
