@@ -76,6 +76,12 @@ function M.bash()
   })
 end
 
+function M.cmake()
+  require'lspconfig'.cmake.setup({
+    cmd = { global.lsp.cmake },
+  })
+end
+
 function M.markdown()
   require'lspconfig'.marksman.setup({
     cmd = {
@@ -156,6 +162,7 @@ function M.lsp()
   M.bash()
   M.python()
   M.rust()
+  M.cmake()
 end
 
 return M
