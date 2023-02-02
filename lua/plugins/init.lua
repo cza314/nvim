@@ -28,7 +28,6 @@ return {
 
   -- Automatic switching of input methods for macos
   {'ybian/smartim',
-    module = is_mac,
     config = function ()
       require('plugins.config.smartim')
     end,
@@ -86,6 +85,13 @@ return {
       require('plugins.config.asynctasks')
     end,
 
+  },
+
+  -- a task system with build systems
+  {'Shatur/neovim-tasks',
+    config = function ()
+      require('plugins.config.neovim-tasks')
+    end,
   },
 
   -- file browser
