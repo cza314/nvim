@@ -166,29 +166,6 @@ insert_left {
   }
 }
 
-insert_blank_line_at_left()
-
-insert_left {
-  GitIcon = {
-    provider = function() return '  ' end,
-    condition = require('galaxyline.provider_vcs').check_git_workspace,
-    highlight = {
-      colors.orange,
-    },
-  }
-}
-
-insert_left {
-  GitBranch = {
-    provider = 'GitBranch',
-    condition = require('galaxyline.provider_vcs').check_git_workspace,
-    highlight = {
-      '#8FBCBB',
-      'bold'
-    },
-  }
-}
-
 -------- right --------
 
 insert_right {
@@ -210,6 +187,29 @@ insert_right {
     },
   }
 }
+insert_blank_line_at_right()
+
+insert_right {
+  GitIcon = {
+    provider = function() return '  ' end,
+    condition = require('galaxyline.provider_vcs').check_git_workspace,
+    highlight = {
+      colors.orange,
+    },
+  }
+}
+
+insert_right {
+  GitBranch = {
+    provider = 'GitBranch',
+    condition = require('galaxyline.provider_vcs').check_git_workspace,
+    highlight = {
+      '#8FBCBB',
+      'bold'
+    },
+  }
+}
+
 insert_blank_line_at_right()
 
 insert_right{
