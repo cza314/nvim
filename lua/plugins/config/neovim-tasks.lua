@@ -7,7 +7,9 @@ require('tasks').setup({
       build_type = 'Debug',
       dap_name = 'lldb',
       args = {
-        configure = { '-D', 'CMAKE_EXPORT_COMPILE_COMMANDS=1', '-G', 'Ninja' },
+        configure = {
+          '-D' , 'CMAKE_CXX_FLAGS=-gdwarf-4',
+        },
       },
     },
   },
