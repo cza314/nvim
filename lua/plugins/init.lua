@@ -28,6 +28,7 @@ return {
 
   -- Automatic switching of input methods for macos
   {'ybian/smartim',
+    enabled = is_mac,
     config = function ()
       require('plugins.config.smartim')
     end,
@@ -75,29 +76,26 @@ return {
     end,
   },
 
-  -- a task system
-  {'skywind3000/asynctasks.vim',
-    dependencies = {
-      'skywind3000/asyncrun.vim',
-    },
-    cmd = {'AsyncTaskEdit', 'AsyncTask'},
-    config = function()
-      require('plugins.config.asynctasks')
-    end,
-
-  },
-
   -- a task system with build systems
+  -- it's not to be used
   {'Shatur/neovim-tasks',
+    enabled = false,
     config = function ()
       require('plugins.config.neovim-tasks')
+    end,
+  },
+
+  -- cmake
+  {'Civitasv/cmake-tools.nvim',
+    config = function ()
+      require('plugins.config.cmake-tools')
     end,
   },
 
   -- file browser
   {'nvim-tree/nvim-tree.lua',
     config = function()
-      local M = require('plugins.config.nvim_tree')
+      local M = require('plugins.config.nvim-tree')
       M.nvim_tree()
       M.mapping()
     end,
