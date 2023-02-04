@@ -221,7 +221,6 @@ return {
       'quangnguyen30192/cmp-nvim-tags',
       'hrsh7th/cmp-nvim-lsp-signature-help',
     },
-    event = 'BufRead',
     config = function()
       local M = require('plugins.config.cmp')
       M.cmp()
