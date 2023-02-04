@@ -92,6 +92,13 @@ return {
     end,
   },
 
+  -- rust
+  {'simrat39/rust-tools.nvim',
+    config = function ()
+      require('plugins.config.rust-tools')
+    end,
+  },
+
   -- file browser
   {'nvim-tree/nvim-tree.lua',
     config = function()
