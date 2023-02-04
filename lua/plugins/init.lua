@@ -76,15 +76,6 @@ return {
     end,
   },
 
-  -- a task system with build systems
-  -- it's not to be used
-  {'Shatur/neovim-tasks',
-    enabled = false,
-    config = function ()
-      require('plugins.config.neovim-tasks')
-    end,
-  },
-
   -- cmake
   {'Civitasv/cmake-tools.nvim',
     config = function ()
