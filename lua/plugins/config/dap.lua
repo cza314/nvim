@@ -194,4 +194,21 @@ function M.codelldb()
   dap.configurations.rust = dap.configurations.cpp
 end
 
+function M.lua()
+  dap.configurations.lua = {
+    {
+      type = 'nlua',
+      request = 'attach',
+      name = "Attach to running Neovim instance",
+    }
+  }
+  dap.adapters.nlua = function(callback, config)
+    callback({ type = 'server', host = config.host or "127.0.0.1", port = config.port or 11234 })
+  end
+
+  vim.api.nvim_create_user_command("Debuglua", function()
+    vim.cmd("lua require\"osv\".run_this()")
+  end, {})
+end
+
 return M

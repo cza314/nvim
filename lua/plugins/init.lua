@@ -126,7 +126,6 @@ return {
       'nvim-telescope/telescope-ui-select.nvim',
       'nvim-telescope/telescope-packer.nvim',
     },
-    event = 'BufRead',
     config = function()
       local M = require('plugins.config.telescope')
       M.telescope()
@@ -181,8 +180,7 @@ return {
       'rcarriga/nvim-dap-ui', -- ui
       'theHamsta/nvim-dap-virtual-text',
       'nvim-telescope/telescope-dap.nvim',
-      'nvim-telescope/telescope.nvim',
-      'jbyuki/one-small-step-for-vimkind',
+      'jbyuki/one-small-step-for-vimkind', -- lua debuger
     },
     config = function()
       local M = require('plugins.config.dap')
@@ -193,6 +191,7 @@ return {
       M.virtual_text()
       M.python()
       M.codelldb()
+      M.lua()
     end,
   },
 
