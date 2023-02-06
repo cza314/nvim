@@ -202,6 +202,7 @@ function M.lua()
       name = "Attach to running Neovim instance",
     }
   }
+
   dap.adapters.nlua = function(callback, config)
     callback({ type = 'server', host = config.host or "127.0.0.1", port = config.port or 11234 })
   end

@@ -1,7 +1,6 @@
 local M = {}
 
 function M.choosewin()
-  -- 选择是屏幕中间显示分屏编号
   vim.g.choosewin_overlay_enable = 0
 end
 

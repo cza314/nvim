@@ -179,8 +179,8 @@ return {
     dependencies = {
       'rcarriga/nvim-dap-ui', -- ui
       'theHamsta/nvim-dap-virtual-text',
-      'nvim-telescope/telescope-dap.nvim',
       'jbyuki/one-small-step-for-vimkind', -- lua debuger
+      'nvim-telescope/telescope-dap.nvim',
     },
     config = function()
       local M = require('plugins.config.dap')
