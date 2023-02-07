@@ -99,9 +99,7 @@ end
 
 function M.hydra()
   local Hydra = require('hydra')
-  local hint = [[
-    (_c_)Continue  (_b_)Breakpoint  (_s_)StepOver  (_n_)StepInto  (_o_)StepOut
-  ]]
+  local hint = [[  (_c_)Continue  (_b_)Breakpoint  (_s_)StepOver  (_n_)StepInto  (_o_)StepOut  ]]
   Hydra({
     name = "debug",
     hint = hint,
