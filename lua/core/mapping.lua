@@ -23,6 +23,7 @@ set_map({
   {'n',  '<Space>tp',   '<CMD>:tabp<CR>'},
   -- window
   {'n',  '<Space>w',    '<C-w>'},
+  {'n',  '<Space>q',    '<CMD>:q<CR>'},
   {'i',  '<C-g>','<Esc>'},
   -- move
   {'i',  '<C-a>' ,'<Esc>0i'},

@@ -21,6 +21,7 @@ require("which-key").register({
   ["<Space>bn"]  = { name = "Next"},
   ["<Space>bp"]  = { name = "Previous"},
   ["<Space>bs"]  = { name = "Buffers"},
+  ["<Space>q"]   = { name = "quit" },
   ["<Space>t"]   = { name = "Tab+"},
   ["<Space>te"]  = { name = "New"},
   ["<Space>tt"]  = { name = "Goto"},
