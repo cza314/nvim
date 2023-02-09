@@ -55,6 +55,22 @@ return {
       require('plugins.config.galaxyline')
     end,
   },
+  --{'nvim-lualine/lualine.nvim',
+  --  config = function()
+  --    require('plugins.config.lualine')
+  --  end,
+  --},
+
+  -- it has some problem
+  --{'folke/noice.nvim',
+  --  dependencies = {
+  --    'MunifTanjim/nui.nvim',
+  --    'rcarriga/nvim-notify',
+  --  },
+  --  config = function()
+  --    require('plugins.config.noice')
+  --  end,
+  --},
 
   -- choose window and tab
   {'t9md/vim-choosewin',
