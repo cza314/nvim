@@ -36,6 +36,7 @@ function global:load_variables()
 
   self.installed = {
     "c",
+    "cpp",
     "lua",
     "vim",
     "help",
