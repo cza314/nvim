@@ -29,6 +29,7 @@ local colors = {
     magenta  = '#C858E9',
     blue     = '#73BA9F',
     red      = '#D54E53',
+    pink     = '#FFC0CB'
 }
 
 local function insert_left(element)
@@ -166,6 +167,62 @@ insert_left {
   }
 }
 
+insert_blank_line_at_left()
+
+insert_left {
+  GitIcon = {
+    provider = function() return '  ' end,
+    condition = require('galaxyline.provider_vcs').check_git_workspace,
+    highlight = {
+      colors.orange,
+    },
+  }
+}
+
+insert_left {
+  GitBranch = {
+    provider = 'GitBranch',
+    condition = require('galaxyline.provider_vcs').check_git_workspace,
+    highlight = {
+      '#8FBCBB',
+      'bold'
+    },
+  }
+}
+
+insert_blank_line_at_left()
+
+insert_left {
+  DiffAdd = {
+    provider = 'DiffAdd',
+    icon = '+',
+    condition = require('galaxyline.provider_vcs').check_git_workspace,
+    highlight = {
+      '#87CEFA',
+    },
+  }
+}
+insert_left {
+  DiffModified = {
+    provider = 'DiffModified',
+    icon = '~',
+    condition = require('galaxyline.provider_vcs').check_git_workspace,
+    highlight = {
+      '#FFE4B5',
+    },
+  }
+}
+insert_left {
+  DiffRemove = {
+    provider = 'DiffRemove',
+    icon = '-',
+    condition = require('galaxyline.provider_vcs').check_git_workspace,
+    highlight = {
+      colors.pink,
+    },
+  }
+}
+
 -------- right --------
 
 insert_right {
@@ -184,28 +241,6 @@ insert_right {
     icon = '  ',
     highlight = {
       colors.yellow,
-    },
-  }
-}
-insert_blank_line_at_right()
-
-insert_right {
-  GitIcon = {
-    provider = function() return '  ' end,
-    condition = require('galaxyline.provider_vcs').check_git_workspace,
-    highlight = {
-      colors.orange,
-    },
-  }
-}
-
-insert_right {
-  GitBranch = {
-    provider = 'GitBranch',
-    condition = require('galaxyline.provider_vcs').check_git_workspace,
-    highlight = {
-      '#8FBCBB',
-      'bold'
     },
   }
 }
