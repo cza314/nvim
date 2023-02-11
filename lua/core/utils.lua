@@ -23,15 +23,24 @@ function M.set_popup_menu(mode, menu, rhs)
   end
 end
 
--- get system mode is dark or light
-function M.get_dark_mode()
+-- set theme
+function M.set_theme(light, dark)
+  local mode = 0 -- 1:dark, 0:light
   if(global.is_mac) then
     local result = io.popen("osascript -e 'tell app \"System Events\" to tell appearance preferences to get dark mode'"):read("l")
     if (result == "true") then
-      return true
+      mode = 1
     end
   end
-  return false
+  if mode == 1 then
+    for _,m in ipairs(dark) do
+      vim.cmd('colorscheme ' .. m)
+    end
+  else
+    for _,m in ipairs(light) do
+      vim.cmd('colorscheme ' .. m)
+    end
+  end
 end
 
 return M
