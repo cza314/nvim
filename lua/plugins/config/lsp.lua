@@ -107,6 +107,7 @@ function M.lspsaga()
         click_support = false,
     },
   })
+  vim.wo.stl = require('lspsaga.symbolwinbar'):get_winbar()
 end
 
 function M.fidget()
