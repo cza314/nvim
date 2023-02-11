@@ -1,5 +1,5 @@
 local global = require('core.global')
-local installed = global.treesitter
+local installed = global.installed
 
 require'nvim-treesitter.configs'.setup {
   ensure_installed = installed,
