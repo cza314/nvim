@@ -34,7 +34,7 @@ function global:load_variables()
     python = '/usr/bin/python3',
   }
 
-  self.treesitter = {
+  self.installed = {
     "c",
     "lua",
     "vim",
@@ -44,6 +44,7 @@ function global:load_variables()
     "markdown",
     "json",
     "org",
+    "toml",
   }
 
 end
