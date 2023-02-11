@@ -40,12 +40,8 @@ return {
 
   -- statusline
   {'glepnir/galaxyline.nvim',
-    dependencies = {
-      'lewis6991/gitsigns.nvim',
-    },
     config = function()
       require('plugins.config.galaxyline')
-      require('plugins.config.gitsigns')
     end,
   },
 
@@ -77,7 +73,7 @@ return {
     },
   },
 
-  -- neogit
+  -- git
   {'TimUntersberger/neogit',
     dependencies = {
       'sindrets/diffview.nvim',
@@ -85,6 +81,13 @@ return {
     cmd = 'Neogit',
     config = function()
       require('plugins.config.neogit')
+    end,
+  },
+
+  {'lewis6991/gitsigns.nvim',
+    cmd = 'Gitsigns',
+    config = function ()
+      require('plugins.config.gitsigns')
     end,
   },
 
