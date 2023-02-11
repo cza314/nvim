@@ -1,5 +1,5 @@
 local global = require('core.global')
-local installed = global.treesitter
+local installed = global.installed
 local is_mac = global.is_mac
 
 return {
@@ -9,19 +9,11 @@ return {
   'yuttie/hydrangea-vim',
   'Shatur/neovim-ayu',
   'NTBBloodbath/doom-one.nvim',
-  'sainnhe/sonokai',
-  'jim-at-jibba/ariake-vim-colors',
-  'Th3Whit3Wolf/onebuddy',
-  'sainnhe/edge',
-  'Th3Whit3Wolf/space-nvim',
-  'marko-cerovac/material.nvim',
-  'folke/tokyonight.nvim',
 
   'kyazdani42/nvim-web-devicons',
   'nvim-lua/plenary.nvim',
   'mbbill/undotree',
-  'RRethy/vim-illuminate',         -- highlight same word that under cursor
-  'folke/todo-comments.nvim',      -- TODO
+  'folke/todo-comments.nvim',
 
   'nathom/filetype.nvim',
   'lewis6991/impatient.nvim',
@@ -43,42 +35,46 @@ return {
 
   -- preview color
   {'norcalli/nvim-colorizer.lua',
-    event = 'BufRead',
-    config = function()
-      require('plugins.config.colorizer').mapping()
-    end,
+    cmd = 'ColorizerToggle',
   },
 
   -- statusline
   {'glepnir/galaxyline.nvim',
+    dependencies = {
+      'lewis6991/gitsigns.nvim',
+    },
     config = function()
       require('plugins.config.galaxyline')
+      require('plugins.config.gitsigns')
     end,
   },
-  --{'nvim-lualine/lualine.nvim',
-  --  config = function()
-  --    require('plugins.config.lualine')
-  --  end,
-  --},
+
+  -- highlight same word that under cursor
+  {'RRethy/vim-illuminate',
+    ft = installed,
+    config = function()
+      require('plugins.config.illuminate')
+    end,
+  },
 
   -- it has some problem
-  --{'folke/noice.nvim',
-  --  dependencies = {
-  --    'MunifTanjim/nui.nvim',
-  --    'rcarriga/nvim-notify',
-  --  },
-  --  config = function()
-  --    require('plugins.config.noice')
-  --  end,
-  --},
+  {'folke/noice.nvim',
+    dependencies = {
+      'MunifTanjim/nui.nvim',
+      'rcarriga/nvim-notify',
+    },
+    config = function()
+      require('plugins.config.noice')
+    end,
+  },
 
   -- choose window and tab
   {'t9md/vim-choosewin',
-    config = function()
-      local M = require('plugins.config.choosewin')
-      M.choosewin()
-      M.mapping()
-    end,
+    cmd = {
+      'ChooseWin',
+      'ChooseWinSwap',
+      'ChooseWinSwapStay'
+    },
   },
 
   -- neogit
@@ -94,6 +90,7 @@ return {
 
   -- cmake
   {'Civitasv/cmake-tools.nvim',
+    ft = {"c", "cc", "cpp", "cmake"},
     config = function ()
       require('plugins.config.cmake-tools')
     end,
@@ -101,6 +98,7 @@ return {
 
   -- rust
   {'simrat39/rust-tools.nvim',
+    ft = {"rust", "rs", "toml"},
     config = function ()
       require('plugins.config.rust-tools')
     end,
@@ -120,7 +118,6 @@ return {
     dependencies = {
       'ggandor/flit.nvim',
     },
-    event = 'BufRead',
     config = function()
       require('plugins.config.flit')
     end,
@@ -129,7 +126,7 @@ return {
   -- code fold
   {'anuvyklack/pretty-fold.nvim',
     dependencies = {'anuvyklack/nvim-keymap-amend'},
-    event = 'BufRead',
+    ft = installed,
     config = function()
       require('plugins.config.fold')
     end,
@@ -178,6 +175,16 @@ return {
 
   -- install lsp and debuger
   {'williamboman/mason.nvim',
+    cmd = {
+      'Mason',
+      'MasonInstall',
+      'MasonInstallAll',
+      'MasonLog',
+      'MasonToolsInstall',
+      'MasonToolsUpdate',
+      'MasonUninstall',
+      'MasonUninstallAll',
+    },
     dependencies = {
       'WhoIsSethDaniel/mason-tool-installer.nvim',
       'jayp0521/mason-null-ls.nvim',
@@ -198,6 +205,7 @@ return {
       'jbyuki/one-small-step-for-vimkind', -- lua debuger
       'nvim-telescope/telescope-dap.nvim',
     },
+    ft = installed,
     config = function()
       local M = require('plugins.config.dap')
       M.config()
@@ -227,6 +235,7 @@ return {
       'quangnguyen30192/cmp-nvim-tags',
       'hrsh7th/cmp-nvim-lsp-signature-help',
     },
+    ft = installed,
     config = function()
       local M = require('plugins.config.cmp')
       M.cmp()
@@ -243,7 +252,7 @@ return {
       'glepnir/lspsaga.nvim',            -- lsp plugin
       'j-hui/fidget.nvim',               -- show lsp progress
     },
-    event = 'BufRead',
+    ft = installed,
     config = function()
       local M = require('plugins.config.lsp')
       M.lsp()
@@ -254,16 +263,11 @@ return {
     end,
   },
 
-  -- menu
-  {'anuvyklack/hydra.nvim',
-    dependencies = {
-      'jbyuki/venn.nvim',
-    }
-  },
+  -- hydra
+  'anuvyklack/hydra.nvim',
 
   -- show keymap
   {'folke/which-key.nvim',
-    event = 'BufRead',
     config = function()
       require('plugins.config.whichkey')
     end,
