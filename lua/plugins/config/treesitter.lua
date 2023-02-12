@@ -7,6 +7,8 @@ require'nvim-treesitter.configs'.setup {
     "help",
     "lua",
     "query",
+    "markdown",
+    "markdown_inline"
   },
   sync_install = true,
   auto_install = true,
