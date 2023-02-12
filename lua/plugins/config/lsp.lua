@@ -31,7 +31,7 @@ function M.clangd()
 end
 
 function M.lua()
-  require('lspconfig').sumneko_lua.setup({
+  require('lspconfig').lua_ls.setup({
     cmd = { global.lsp.lua },
     settings = {
       Lua = {
