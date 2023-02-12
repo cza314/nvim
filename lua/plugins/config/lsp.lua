@@ -104,6 +104,7 @@ function M.lspsaga()
         separator = ' ',
         show_file = true,
         file_formatter = "%:t",
+        folder_level = 1,
         click_support = false,
     },
   })
