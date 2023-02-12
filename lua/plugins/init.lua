@@ -109,10 +109,10 @@ return {
 
   -- file browser
   {'nvim-tree/nvim-tree.lua',
+    cmd = "NvimTreeToggle",
     config = function()
       local M = require('plugins.config.nvim-tree')
       M.nvim_tree()
-      M.mapping()
     end,
   },
 
@@ -123,15 +123,6 @@ return {
     },
     config = function()
       require('plugins.config.flit')
-    end,
-  },
-
-  -- code fold
-  {'anuvyklack/pretty-fold.nvim',
-    dependencies = {'anuvyklack/nvim-keymap-amend'},
-    ft = installed,
-    config = function()
-      require('plugins.config.fold')
     end,
   },
 
@@ -160,7 +151,6 @@ return {
       local M = require('plugins.config.markdown')
       M.markdown_preview()
       M.mkdnflow()
-      M.mapping()
     end,
   },
 
@@ -170,7 +160,6 @@ return {
       "folke/twilight.nvim",
     },
     build = ':TSUpdate',
-    ft = installed,
     config = function ()
       require('plugins.config.treesitter')
     end,
@@ -208,13 +197,17 @@ return {
       'jbyuki/one-small-step-for-vimkind', -- lua debuger
       'nvim-telescope/telescope-dap.nvim',
     },
-    ft = installed,
+    cmd = {
+      'DapContinue',
+      'DapToggleBreakpoint',
+      'DapStepOver',
+      'DapStepInto',
+      'DapStepOut',
+    },
     config = function()
       local M = require('plugins.config.dap')
       M.config()
       M.ui()
-      M.mapping()
-      M.hydra()
       M.virtual_text()
       M.python()
       M.codelldb()
@@ -267,7 +260,11 @@ return {
   },
 
   -- hydra
-  'anuvyklack/hydra.nvim',
+  {'anuvyklack/hydra.nvim',
+    config = function ()
+      require('plugins.config.hydra')
+    end
+  },
 
   -- show keymap
   {'folke/which-key.nvim',

@@ -25,16 +25,6 @@ function M.mapping()
     {'n', '<leader>sh','<CMD>Telescope help_tags'   .. ' theme=' .. theme .. '<CR>'},
     {'n', '<leader>so','<CMD>Telescope oldfiles'    .. ' theme=' .. theme .. '<CR>'},
   })
-
-  require("which-key").register({
-    ["<leader>s"]  = { name = "Search+"},
-    ["<leader>ss"] = { name = "Telescope"},
-    ["<leader>sf"] = { name = "File"},
-    ["<leader>sg"] = { name = "Grep"},
-    ["<leader>sb"] = { name = "Buffer"},
-    ["<leader>sh"] = { name = "Help"},
-    ["<leader>so"] = { name = "Oldfile"},
-  })
 end
 
 return M

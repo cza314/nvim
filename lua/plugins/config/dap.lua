@@ -81,49 +81,6 @@ function M.ui()
   })
 end
 
-function M.mapping()
-  local set_map = require('core.utils').set_map
-  set_map({
-    {'n',  '<F5>', '<CMD>:DapContinue<CR>'},
-    {'n',  '<F3>', '<CMD>:DapToggleRepl<CR>'},
-    {'n',  '<F9>', '<CMD>:DapToggleBreakpoint<CR>'},
-    {'n',  '<F10>', '<CMD>:DapStepOver<CR>'},
-    {'n',  '<F11>', '<CMD>:DapStepInto<CR>'},
-    {'n',  '<F12>', '<CMD>:DapStepOut<CR>'},
-  })
-
-  require("which-key").register({
-    ["<leader>d"]  = { name = "Debug+"},
-  })
-end
-
-function M.hydra()
-  local Hydra = require('hydra')
-  local hint = [[  (_c_)Continue  (_b_)Breakpoint  (_s_)StepOver  (_n_)StepInto  (_o_)StepOut  ]]
-  Hydra({
-    name = "debug",
-    hint = hint,
-    config = {
-      color = 'pink',
-      invoke_on_body = false,
-      hint = {
-        position = 'bottom',
-        border = 'rounded',
-      },
-    },
-    mode = 'n',
-    body = '<leader>d',
-    heads = {
-      {'c', '<CMD>:DapContinue<CR>',          {desc = 'Continue'}},
-      {'b', '<CMD>:DapToggleBreakpoint<CR>',  {desc = 'Breakpoint'}},
-      {'s', '<CMD>:DapStepOver<CR>',          {desc = 'StepOver'}},
-      {'n', '<CMD>:DapStepInto<CR>',          {desc = 'StepInto'}},
-      {'o', '<CMD>:DapStepOut<CR>',           {desc = 'StepOut'}},
-      { '<Esc>', nil,                         {exit = true}},
-    },
-  })
-end
-
 function M.virtual_text()
   require("nvim-dap-virtual-text").setup {
     enabled = true,

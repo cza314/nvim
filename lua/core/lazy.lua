@@ -20,4 +20,11 @@ function M.lazy_init()
   require("lazy").setup(plugins)
 end
 
+function M.mapping()
+  local set_map = require('core.utils').set_map
+  set_map({
+    {'n', '<leader>b', '<CMD>NvimTreeToggle<CR>'}, -- nvim-tree
+  })
+end
+
 return M

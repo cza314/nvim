@@ -19,15 +19,4 @@ function M.nvim_tree()
   })
 end
 
-function M.mapping()
-  local set_map = require('core.utils').set_map
-  set_map({
-    {'n', '<leader>b', '<CMD>NvimTreeToggle<CR>'},
-  })
-
-  require("which-key").register({
-    ['<leader>b'] = { name = "browser"},
-  })
-end
-
 return M
