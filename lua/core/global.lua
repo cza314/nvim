@@ -35,17 +35,16 @@ function global:load_variables()
   }
 
   self.installed = {
+    "bash",
     "c",
     "cpp",
+    "cmake",
     "lua",
     "vim",
-    "help",
     "rust",
     "python",
     "markdown",
     "json",
-    "org",
-    "toml",
   }
 
 end

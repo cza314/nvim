@@ -46,15 +46,4 @@ function M.markdown_preview()
   vim.g.mkdp_filetypes = { "markdown" }
 end
 
-function M.mapping()
-  local set_map = require('core.utils').set_map
-  set_map({
-    {'n', '<leader>pm','<CMD>MarkdownPreviewToggle<CR>'},
-  })
-
-  require("which-key").register({
-    ["<leader>pm"]  = { name = "Markdown Preview"},
-  })
-end
-
 return M
