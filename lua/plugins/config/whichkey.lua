@@ -12,6 +12,7 @@ require("which-key").setup {
     align = "center",
   },
 }
+
 require("which-key").register({
   ["<Space>e"]   = { name = "Edit+"},
   ["<Space>ed"]  = { name = "Delete Space"},
@@ -33,16 +34,6 @@ require("which-key").register({
   ["<Space>to"]  = { name = "Close Others"},
   ["<Space>tn"]  = { name = "Next"},
   ["<Space>tp"]  = { name = "Previous"},
-
-  ["<Space>1"]   = { name = "Tab 1"},
-  ["<Space>2"]   = { name = "Tab 2"},
-  ["<Space>3"]   = { name = "Tab 3"},
-  ["<Space>4"]   = { name = "Tab 4"},
-  ["<Space>5"]   = { name = "Tab 5"},
-  ["<Space>6"]   = { name = "Tab 6"},
-  ["<Space>7"]   = { name = "Tab 7"},
-  ["<Space>8"]   = { name = "Tab 8"},
-  ["<Space>9"]   = { name = "Tab 9"},
 
   ["<Space>w"]   = { name = "Windows+"},
   ["<Space>ws"]  = { name = "Split Vertically"},
