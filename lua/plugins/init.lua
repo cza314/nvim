@@ -231,7 +231,6 @@ return {
       'quangnguyen30192/cmp-nvim-tags',
       'hrsh7th/cmp-nvim-lsp-signature-help',
     },
-    ft = installed,
     config = function()
       local M = require('plugins.config.cmp')
       M.cmp()
