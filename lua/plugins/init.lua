@@ -53,7 +53,7 @@ return {
     end,
   },
 
-  -- it has some problem
+  -- float UI
   {'folke/noice.nvim',
     dependencies = {
       'MunifTanjim/nui.nvim',
