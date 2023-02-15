@@ -5,6 +5,7 @@ local options = {
     -- lsp
     "lua-language-server",
     "clangd",
+    "cmake-language-server",
     "rust-analyzer",
     "marksman",
     "jedi-language-server",
