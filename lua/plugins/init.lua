@@ -33,9 +33,14 @@ return {
     end,
   },
 
-  -- preview color
-  {'norcalli/nvim-colorizer.lua',
-    cmd = 'ColorizerToggle',
+  {'uga-rosa/ccc.nvim',
+    cmd = {
+      'CccPick',
+      'CccConvert',
+      'CccHighlighterToggle',
+      'CccHighlighterEnable',
+      'CccHighlighterDisable',
+    },
   },
 
   -- statusline
