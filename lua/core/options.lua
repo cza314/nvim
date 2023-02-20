@@ -128,7 +128,7 @@ o.listchars      = "tab:»·,"  ..
 opt.undofile       = true
 opt.expandtab      = true
 opt.autoindent     = true
-opt.wrap           = false
+opt.wrap           = true
 opt.linebreak      = false
 opt.number         = true
 opt.relativenumber = true
@@ -147,8 +147,6 @@ opt.concealcursor  = "niv"
 
 g.AutoClosePreserveDotReg = 0
 g.mapleader = "\\";
-
-wo.wrap = false;
 
 cmd('set shortmess+=c')
 cmd('unmenu PopUp')
