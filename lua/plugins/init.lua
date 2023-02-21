@@ -33,6 +33,7 @@ return {
     end,
   },
 
+  -- color highlight
   {'uga-rosa/ccc.nvim',
     cmd = {
       'CccPick',
