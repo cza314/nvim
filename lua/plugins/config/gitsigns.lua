@@ -39,3 +39,7 @@ require('gitsigns').setup {
     enable = false
   },
 }
+
+vim.api.nvim_create_user_command("Git", function()
+  vim.cmd("Gitsigns show")
+end, {})

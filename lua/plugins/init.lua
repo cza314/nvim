@@ -1,5 +1,4 @@
 local global = require('core.global')
-local installed = global.installed
 local is_mac = global.is_mac
 
 return {
@@ -53,7 +52,6 @@ return {
 
   -- highlight same word that under cursor
   {'RRethy/vim-illuminate',
-    ft = installed,
     config = function()
       require('plugins.config.illuminate')
     end,
@@ -92,7 +90,10 @@ return {
   },
 
   {'lewis6991/gitsigns.nvim',
-    cmd = 'Gitsigns',
+    cmd = {
+      'Gitsigns',
+      'Git',
+    },
     config = function ()
       require('plugins.config.gitsigns')
     end,
@@ -254,7 +255,6 @@ return {
       'glepnir/lspsaga.nvim',            -- lsp plugin
       'j-hui/fidget.nvim',               -- show lsp progress
     },
-    ft = installed,
     config = function()
       local M = require('plugins.config.lsp')
       M.lsp()

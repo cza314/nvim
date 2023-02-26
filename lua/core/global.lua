@@ -34,19 +34,6 @@ function global:load_variables()
     python = '/usr/bin/python3',
   }
 
-  self.installed = {
-    "bash",
-    "c",
-    "cpp",
-    "cmake",
-    "lua",
-    "vim",
-    "rust",
-    "python",
-    "markdown",
-    "json",
-  }
-
 end
 
 global:load_variables()
