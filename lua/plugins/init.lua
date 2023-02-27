@@ -16,6 +16,7 @@ return {
 
   'nathom/filetype.nvim',
   'lewis6991/impatient.nvim',
+  't9md/vim-choosewin',
 
   -- Automatic switching of input methods for macos
   {'ybian/smartim',
@@ -69,15 +70,6 @@ return {
     end,
   },
 
-  -- choose window and tab
-  {'t9md/vim-choosewin',
-    cmd = {
-      'ChooseWin',
-      'ChooseWinSwap',
-      'ChooseWinSwapStay'
-    },
-  },
-
   -- git
   {'TimUntersberger/neogit',
     dependencies = {
@@ -90,10 +82,6 @@ return {
   },
 
   {'lewis6991/gitsigns.nvim',
-    cmd = {
-      'Gitsigns',
-      'Git',
-    },
     config = function ()
       require('plugins.config.gitsigns')
     end,
@@ -126,6 +114,7 @@ return {
 
   -- cursor jump
   {'ggandor/leap.nvim',
+    keys = {'f', 'F', 't', 'T'},
     dependencies = {
       'ggandor/flit.nvim',
     },
@@ -136,6 +125,7 @@ return {
 
   -- search
   {'nvim-telescope/telescope.nvim',
+    cmd = {'Telescope'},
     dependencies = {
       'nvim-telescope/telescope-live-grep-args.nvim',
       'nvim-telescope/telescope-ui-select.nvim',
@@ -144,7 +134,6 @@ return {
     config = function()
       local M = require('plugins.config.telescope')
       M.telescope()
-      M.mapping()
     end,
   },
 
@@ -231,18 +220,23 @@ return {
       'hrsh7th/cmp-emoji',
       'hrsh7th/cmp-buffer',
       'hrsh7th/cmp-path',
+      'hrsh7th/cmp-calc',
       'L3MON4D3/LuaSnip',
       'saadparwaiz1/cmp_luasnip',
       'rafamadriz/friendly-snippets',
       'hrsh7th/cmp-nvim-lsp',
       'onsails/lspkind-nvim',
       'quangnguyen30192/cmp-nvim-tags',
+      'uga-rosa/cmp-dynamic',
+      'hrsh7th/cmp-cmdline',
+      'hrsh7th/cmp-nvim-lsp-document-symbol',
       'hrsh7th/cmp-nvim-lsp-signature-help',
     },
     config = function()
       local M = require('plugins.config.cmp')
       M.cmp()
       M.luasnip()
+      M.cmp_dynamic()
     end,
   },
 
