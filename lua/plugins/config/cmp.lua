@@ -93,6 +93,7 @@ function M.cmp()
       { name = "tags" },
       { name = "dynamic" },
       { name = "nvim_lsp_signature_help" },
+      { name = 'npm', keyword_length = 4 },
     },
     formatting = {
       format = lspkind.cmp_format({with_text = true, maxwidth = 50}),
