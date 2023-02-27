@@ -94,6 +94,7 @@ function M.cmp()
       { name = "dynamic" },
       { name = "nvim_lsp_signature_help" },
       { name = 'npm', keyword_length = 4 },
+      { name = "crates" },
     },
     formatting = {
       format = lspkind.cmp_format({with_text = true, maxwidth = 50}),
@@ -150,6 +151,10 @@ function M.cmp_dynamic()
       },
     },
   })
+end
+
+M.crates = function ()
+  require('crates').setup {}
 end
 
 return M

@@ -231,6 +231,7 @@ return {
       'quangnguyen30192/cmp-nvim-tags',
       'uga-rosa/cmp-dynamic',
       'hrsh7th/cmp-cmdline',
+      'saecki/crates.nvim',
       'hrsh7th/cmp-nvim-lsp-document-symbol',
       'hrsh7th/cmp-nvim-lsp-signature-help',
     },
