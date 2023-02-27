@@ -112,6 +112,13 @@ return {
     end,
   },
 
+  -- tasks system
+  {'GustavoKatel/tasks.nvim',
+    config = function()
+      require('plugins.config.tasks')
+    end,
+  },
+
   -- cursor jump
   {'ggandor/leap.nvim',
     keys = {'f', 'F', 't', 'T'},
