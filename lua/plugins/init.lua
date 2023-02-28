@@ -113,9 +113,9 @@ return {
   },
 
   -- tasks system
-  {'GustavoKatel/tasks.nvim',
+  {'stevearc/overseer.nvim',
     config = function()
-      require('plugins.config.tasks')
+      require('plugins.config.overseer')
     end,
   },
 
