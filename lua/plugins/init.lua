@@ -241,6 +241,7 @@ return {
       'saecki/crates.nvim',
       'hrsh7th/cmp-nvim-lsp-document-symbol',
       'hrsh7th/cmp-nvim-lsp-signature-help',
+      'rcarriga/cmp-dap',
     },
     config = function()
       local M = require('plugins.config.cmp')

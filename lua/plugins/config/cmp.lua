@@ -32,6 +32,9 @@ function M.cmp()
   end
 
   local config = {
+    enabled = function()
+      return vim.api.nvim_buf_get_option(0, "buftype") ~= "prompt" or require("cmp_dap").is_dap_buffer()
+    end,
     window = {
       completion = {
         border = border "CmpBorder",
@@ -114,6 +117,11 @@ function M.cmp()
       {{ name = 'nvim_lsp_document_symbol' }},
       {{ name = 'buffer' }}
     ),
+  })
+  cmp.setup.filetype({ "dap-repl", "dapui_watches", "dapui_hover" }, {
+    sources = {
+      { name = "dap" },
+    },
   })
 end
 
