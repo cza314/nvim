@@ -6,7 +6,6 @@ return {
 
   -- theme
   'Shatur/neovim-ayu',
-  'NTBBloodbath/doom-one.nvim',
   'sainnhe/sonokai',
 
   'kyazdani42/nvim-web-devicons',
