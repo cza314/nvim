@@ -33,7 +33,7 @@ function M.cmp()
 
   local config = {
     completion = {
-      keyword_length = 2,
+      keyword_length = 1,
     },
     enabled = function()
       return vim.api.nvim_buf_get_option(0, "buftype") ~= "prompt" or require("cmp_dap").is_dap_buffer()

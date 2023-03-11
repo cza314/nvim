@@ -5,9 +5,9 @@ return {
   'folke/lazy.nvim',
 
   -- theme
-  'yuttie/hydrangea-vim',
   'Shatur/neovim-ayu',
   'NTBBloodbath/doom-one.nvim',
+  'sainnhe/sonokai',
 
   'kyazdani42/nvim-web-devicons',
   'nvim-lua/plenary.nvim',

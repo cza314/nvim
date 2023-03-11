@@ -14,5 +14,5 @@ require('core.utils').set_theme({ -- set light theme and dark theme
   'ayu-light',
   'doom-one',
 }, {
-  'hydrangea'
+  'sonokai',
 })
