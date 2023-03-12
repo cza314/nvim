@@ -6,7 +6,11 @@ return {
 
   -- theme
   'Shatur/neovim-ayu',
-  'sainnhe/sonokai',
+  {'sainnhe/sonokai',
+    config = function ()
+      vim.g.sonokai_style='atlantis'
+    end,
+  },
 
   'kyazdani42/nvim-web-devicons',
   'nvim-lua/plenary.nvim',
