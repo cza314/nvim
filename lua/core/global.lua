@@ -25,7 +25,6 @@ function global:load_variables()
     lua      = data .. 'mason/bin/lua-language-server',
     rust     = data .. 'mason/bin/rust-analyzer',
     markdown = data .. 'mason/bin/marksman',
-    latex    = data .. 'mason/bin/marksman',
     bash     = data .. 'mason/bin/bash-language-server',
     cmake    = data .. 'mason/bin/cmake-language-server',
   }

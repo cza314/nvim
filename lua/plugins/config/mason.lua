@@ -8,7 +8,6 @@ local options = {
     "cmake-language-server",
     "rust-analyzer",
     "marksman",
-    "texlab",
     "jedi-language-server",
     -- debuger
     "debugpy",
