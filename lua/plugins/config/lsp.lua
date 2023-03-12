@@ -7,91 +7,6 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
   }
 )
 
-function M.clangd()
-  require'lspconfig'.clangd.setup({
-    cmd = {
-      global.lsp.clangd,
-      "--background-index",
-      "--compile-commands-dir=build",
-      "-j=12",
-      "--query-driver=/usr/bin/clang++",
-      "--clang-tidy",
-      "--clang-tidy-checks=performance-*,bugprone-*",
-      "--all-scopes-completion",
-      "--completion-style=detailed",
-      "--header-insertion=iwyu",
-      "--pch-storage=disk",
-    },
-    filetypes = { "c", "cc", "cpp", "objc", "objcpp" , "h"},
-    on_init = {
-      clangdFileStatus = true,
-    },
-    handlers = require "lsp-status".extensions.clangd.setup(),
-  })
-end
-
-function M.lua()
-  require('lspconfig').lua_ls.setup({
-    cmd = { global.lsp.lua },
-    settings = {
-      Lua = {
-        runtime = {
-          version = 'LuaJIT',
-          path = vim.split(package.path, ';'),
-        },
-        diagnostics = {
-          globals = {'vim'},
-        },
-        workspace = {
-          library = {
-            [vim.fn.expand('$VIMRUNTIME/lua')] = true,
-            [vim.fn.expand('$VIMRUNTIME/lua/vim/lsp')] = true,
-          },
-        },
-      }
-    },
-  })
-end
-
-function M.python()
-  require('lspconfig').jedi_language_server.setup({
-    cmd = { global.lsp.python },
-  })
-end
-
-function M.rust()
-  require('lspconfig').rust_analyzer.setup({
-    cmd = { global.lsp.rust },
-    filetypes = { "rust" },
-    settings = {
-      ["rust-analyzer"] = {}
-    },
-  })
-end
-
-function M.bash()
-  require('lspconfig').bashls.setup({
-    cmd = { global.lsp.bash, "start" },
-    filetypes = { "sh" },
-  })
-end
-
-function M.cmake()
-  require'lspconfig'.cmake.setup({
-    cmd = { global.lsp.cmake },
-  })
-end
-
-function M.markdown()
-  require'lspconfig'.marksman.setup({
-    cmd = {
-      global.lsp.markdown,
-      "server",
-    },
-    filetypes = { "markdown" },
-  })
-end
-
 function M.lspsaga()
   require('lspsaga').setup({
     lightbulb = {
@@ -158,13 +73,85 @@ function M.menu()
 end
 
 function M.lsp()
-  M.clangd()
-  M.lua()
-  M.markdown()
-  M.bash()
-  M.python()
-  M.rust()
-  M.cmake()
+  local lsp = require('lspconfig')
+
+  -- c/cpp
+  lsp.clangd.setup({
+    cmd = {
+      global.lsp.clangd,
+      "--background-index",
+      "--compile-commands-dir=build",
+      "-j=12",
+      "--query-driver=/usr/bin/clang++",
+      "--clang-tidy",
+      "--clang-tidy-checks=performance-*,bugprone-*",
+      "--all-scopes-completion",
+      "--completion-style=detailed",
+      "--header-insertion=iwyu",
+      "--pch-storage=disk",
+    },
+    filetypes = { "c", "cc", "cpp", "objc", "objcpp" , "h"},
+    on_init = {
+      clangdFileStatus = true,
+    },
+    handlers = require "lsp-status".extensions.clangd.setup(),
+  })
+
+  -- lua
+  lsp.lua_ls.setup({
+    cmd = { global.lsp.lua },
+    settings = {
+      Lua = {
+        runtime = {
+          version = 'LuaJIT',
+          path = vim.split(package.path, ';'),
+        },
+        diagnostics = {
+          globals = {'vim'},
+        },
+        workspace = {
+          library = {
+            [vim.fn.expand('$VIMRUNTIME/lua')] = true,
+            [vim.fn.expand('$VIMRUNTIME/lua/vim/lsp')] = true,
+          },
+        },
+      }
+    },
+  })
+
+  -- python
+  lsp.jedi_language_server.setup({
+    cmd = { global.lsp.python },
+  })
+
+  -- rust
+  lsp.rust_analyzer.setup({
+    cmd = { global.lsp.rust },
+    filetypes = { "rust" },
+    settings = {
+      ["rust-analyzer"] = {}
+    },
+  })
+
+  -- bash
+  lsp.bashls.setup({
+    cmd = { global.lsp.bash, "start" },
+    filetypes = { "sh" },
+  })
+
+  -- cmake
+  lsp.cmake.setup({
+    cmd = { global.lsp.cmake },
+  })
+
+  -- markdown
+  lsp.marksman.setup({
+    cmd = {
+      global.lsp.markdown,
+      "server",
+    },
+    filetypes = { "markdown" },
+  })
 end
 
 return M
