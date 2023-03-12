@@ -92,6 +92,14 @@ function M.markdown()
   })
 end
 
+function M.latex()
+  require'lspconfig'.texlab.setup({
+    cmd = {
+      global.lsp.latex,
+    },
+  })
+end
+
 function M.lspsaga()
   require('lspsaga').setup({
     lightbulb = {
@@ -161,6 +169,7 @@ function M.lsp()
   M.clangd()
   M.lua()
   M.markdown()
+  M.latex()
   M.bash()
   M.python()
   M.rust()
